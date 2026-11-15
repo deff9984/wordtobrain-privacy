@@ -19,47 +19,68 @@
 
 <section id="en" lang="en">
 <h1>Privacy Policy — WordToBrain</h1>
-<p class="muted">Version 1.2 · Effective date: October 14, 2026</p>
+<p class="muted">Version 2.0 · Last updated: November 15, 2026</p>
 
 <h2>1. Data Controller and scope</h2>
-<p>This Policy describes how the <b>WordToBrain</b> application ("the App", "we") handles data. The data controller is the publisher of the App — an independent developer. This Policy applies to all users of the App.</p>
-<p>Unless otherwise stated in Sections 6 and 7, the App <b>does not collect, process, or store personal data</b> as defined by the GDPR (Art. 4(1)) or other applicable law. The App runs locally on your device and does not upload files to our servers.</p>
+<p>This Policy describes how the <b>WordToBrain</b> application ("the App", "we") handles data. The data controller is the publisher of the App — an independent developer. This Policy applies to all users of the App, including the optional online Arena and research features.</p>
 
 <h2>2. In short</h2>
-<p>WordToBrain is a speed-reading app (RSVP) that works mostly offline. The App does not collect, transmit, or sell personal data and makes no network connections to our servers. Your books, reading positions, and settings remain on your device only and are under your control. The mobile versions of the App may display Google AdMob advertising (Section 6); "WordToBrain Pro" subscribers see no ads.</p>
+<p>WordToBrain is a speed-reading app (RSVP). Reading works offline: your books, reading positions, and settings stay on your device. If you choose to join the <b>Arena</b> (daily challenge and leaderboards), we create a <b>nickname-only account</b> — no email, phone number, or password is requested — and store your nickname, scores, and reading volume so they can appear on public leaderboards. Two further features are strictly optional and consent-gated: a <b>research programme</b> (anonymous bins and reading statistics) and <b>eye-tracking research</b> (processed on your device; only numeric aggregates are uploaded). The mobile versions may display Google AdMob advertising (Section 11); "WordToBrain Pro" subscribers see no ads.</p>
 
-<h2>3. Data we do NOT collect</h2>
+<h2>3. Arena accounts (nickname only)</h2>
+<p>To participate in the Arena the App registers an account with the nickname you pick. We store:</p>
 <ul>
-  <li>The App contains no analytics or tracking systems, except Google AdMob advertising in the mobile versions (Section 6).</li>
-  <li>The App does not collect location, contacts, message content, or personal data you type into texts.</li>
-  <li>The App does not send your books or reading data to external servers.</li>
-  <li>The App requires no account registration with the publisher and does not link usage to any identity on our side.</li>
+  <li>your <b>nickname</b> (your public identity on the leaderboards);</li>
+  <li>a random <b>access token</b> the App keeps on your device to authenticate requests — it is not a password, contains no personal data, and is never displayed;</li>
+  <li>your arena results (Section 4).</li>
 </ul>
+<p><b>No email address, phone number, or password is requested or stored.</b> The account exists only on our server and on your device; there is no third-party login and no social graph. You can rename your nickname at any time from the App.</p>
 
-<h2>4. Data stored only on your device</h2>
-<p>The App's local storage on your device (IndexedDB) may contain: imported books, reading positions, bookmarks, settings, and local session results. This data:</p>
-<ul>
-  <li>never leaves your device and is never transmitted to us;</li>
-  <li>is isolated from other applications by the operating system;</li>
-  <li>is removed when you delete the App or clear its storage.</li>
-</ul>
-<p><b>No synchronization.</b> WordToBrain does not sync your library between devices: each device keeps its own library.</p>
-<p><b>Backups.</b> Your device's standard backup and synchronization features (for example, iOS system backups) may include App data stored on the device. Such copying is performed by the operating system at your discretion and is not data processing by the App. We have no access to these backups.</p>
+<h2>4. Leaderboards and reading volume</h2>
+<p>When you take a daily challenge or sync your reading progress, we store your results: score, reading speed (words per minute), accuracy, time taken, and reading volume (words and seconds). These results are attached to your account and shown on <b>public leaderboards next to your nickname</b>, visible to other users. Reading you do outside the Arena stays on your device and is never uploaded unless you sync it for the volume board.</p>
 
-<h2>5. File import</h2>
+<h2>5. Reports and moderation</h2>
+<p>Leaderboard nicknames are user-chosen, so the App lets you <b>report</b> a nickname you find offensive. A report stores: the reported nickname, a reason chosen from a fixed list, and an optional free-text explanation limited to 200 characters. Reports are visible <b>only to the site administrator</b> in a private moderation queue — never to other users and never on any public page. You can also <b>block</b> a nickname: blocked rows simply disappear from your own leaderboards. Your block list is private to your account and is not shown to anyone else.</p>
+
+<h2>6. Account deletion</h2>
+<p>You can delete your account <b>inside the App</b> (Settings → Account → Delete account), confirmed twice. Deletion is immediate and irreversible: the server erases the account and everything attached to it in a single operation — your nickname, token, all leaderboard entries and reading volume, reports and blocks in which you appear, and any research or eye-tracking data. Your nickname and rows simply stop appearing on the boards. Only data we do not hold cannot be deleted; after deletion we keep nothing that is linked to your account.</p>
+
+<h2>7. Data stored only on your device</h2>
+<p>The App's local storage on your device contains: imported books, reading positions, bookmarks, settings, and local session results. This data never leaves your device unless you explicitly use an Arena or research feature described above, is isolated from other applications by the operating system, and is removed when you delete the App or clear its storage.</p>
+<p><b>No library synchronization.</b> WordToBrain does not sync your book library between devices: each device keeps its own library.</p>
+<p><b>Backups.</b> Your device's standard backup features (for example, iOS system backups) may include App data stored on the device. Such copying is performed by the operating system at your discretion and is not data processing by the App. We have no access to these backups.</p>
+
+<h2>8. File import</h2>
 <p>Book import (TXT, FB2, EPUB, PDF, DOC, DOCX) is performed only by you, following your explicit action (file selection or text paste), and is processed locally on your device for reading. Files are not transmitted to us or to third parties.</p>
 
-<h2>6. Advertising (mobile versions)</h2>
+<h2>9. Research programme (optional)</h2>
+<p>The App offers an optional, consent-gated research programme (reading-speed science). Participation requires an Arena account and your explicit consent, and nothing is recorded before you consent. If you participate, we store:</p>
+<ul>
+  <li><b>profile answers as ranges only</b> ("bins"): age band, gender, education level, how many books you read, native language, and your goal — never exact values, and free text is never accepted;</li>
+  <li><b>behavioral events</b> from a fixed whitelist: app open/close, reading sessions (words, seconds, average WPM), pauses and resumes, onboarding completion, and arena results.</li>
+</ul>
+<p>You can withdraw consent in the research profile screen of the App at any time; recording stops immediately, and the data already stored is erased together with your account (Section 6).</p>
+
+<h2>10. Eye-tracking research (optional)</h2>
+<p>Within the research programme you may separately opt in to <b>camera-based eye tracking</b> (gaze) during the daily challenge. It requires its own consent and works like this:</p>
+<ul>
+  <li>the camera runs only in the App, only during a consented session, and is never used in the background;</li>
+  <li>gaze processing happens <b>on your device</b> — <b>camera frames never leave it</b> and are never uploaded;</li>
+  <li>only numeric aggregates are uploaded once per completed session: per-word fixation times and counts, blinks, time off-screen, scaled pupil-size averages, a calibration-error estimate, capture quality, and an optional self-reported difficulty rating;</li>
+  <li>you can turn eye tracking off in Settings at any time, and all gaze data is erased together with your account (Section 6).</li>
+</ul>
+
+<h2>11. Advertising (mobile versions)</h2>
 <p>The mobile versions of the App (iOS and Android) may display interstitial ads through Google AdMob. The web version shows no ads. "WordToBrain Pro" subscribers see no ads.</p>
 <ul>
   <li>Ad delivery may involve data processing by the ad provider (for example, advertising identifiers, IP address, and ad interaction data) in accordance with <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and the AdMob terms.</li>
-  <li>On iOS, the system App Tracking Transparency prompt is shown on first launch; you can decline, and ads will still be served without personalization.</li>
+  <li>On iOS, the system App Tracking Transparency prompt is shown; you can decline, and ads will still be served without personalization.</li>
   <li>Where required by law (for example, the EEA or the UK), Google applies a user-consent mechanism in line with GDPR requirements.</li>
   <li>We do not receive personal data that identifies you from the ad provider and do not build a profile of you from advertising data.</li>
   <li>Opting out: subscribe to "WordToBrain Pro" or delete the App.</li>
 </ul>
 
-<h2>7. In-app purchases (subscription)</h2>
+<h2>12. In-app purchases (subscription)</h2>
 <p>The "WordToBrain Pro" subscription is purchased and paid for through the store from which the App was installed: the Apple App Store (StoreKit) or Google Play (Play Billing).</p>
 <ul>
   <li>Payment data (such as card numbers) is processed exclusively by the store; the App and the publisher never receive or store it.</li>
@@ -67,25 +88,25 @@
   <li>Subscription management and cancellation are performed in your account settings in the relevant store. Terms are set out in the <a href="https://deff9984.github.io/wordtobrain-terms/">Terms of Use</a>.</li>
 </ul>
 
-<h2>8. Disclosure to third parties, sale, and transfer</h2>
-<p>We do not sell, rent, or disclose personal data to third parties. Since we do not collect personal data on our side, no transfer of such data — including cross-border transfer — takes place. The exception is data processed by the advertising and payment providers (Sections 6 and 7), under their own policies.</p>
+<h2>13. Disclosure to third parties, sale, and transfer</h2>
+<p>We do not sell, rent, or disclose your personal data to third parties. Your Arena and research data is stored on our server and processed only as described in this Policy. The exceptions are data processed by the advertising and payment providers (Sections 11 and 12) under their own policies. We do not use your data for advertising, and we do not share it for tracking across other companies' apps or websites.</p>
 
-<h2>9. Retention</h2>
-<p>The App does not retain personal data on the publisher's side. The local data described in Section 4 is stored on your device only as long as the App exists and is deleted when you uninstall it or clear its storage.</p>
+<h2>14. Retention</h2>
+<p>Arena, report, block, research, and gaze data is kept while your account exists and is erased in full when you delete your account (Section 6). Abuse-prevention counters (for example, rate limits keyed by IP address) are kept only for short security windows and are not linked to your nickname. Local device data (Section 7) is kept until you delete the App or clear its storage.</p>
 
-<h2>10. Security</h2>
-<p>Local data is protected by the isolation provided by the operating system. Data transfers to the advertising provider (Section 6) use secure connections as required by Google.</p>
+<h2>15. Security</h2>
+<p>Data is transmitted over encrypted HTTPS connections, and arena requests are authenticated with the per-account token described in Section 3. Local data is protected by the isolation provided by the operating system.</p>
 
-<h2>11. Children</h2>
-<p>The App is not directed at children and does not collect children's data. If you believe otherwise, please contact us via the details below; we store no data that could be subject to deletion.</p>
+<h2>16. Children</h2>
+<p>The App is not directed at children. Readers who declare an age under 18 (and those under 13 in particular) are <b>excluded from the Arena, the research programme, and eye tracking</b> outright: they cannot create a competing presence or consent to research. If you believe a child has created an account, contact us and we will delete it.</p>
 
-<h2>12. Your rights</h2>
-<p>Since no personal data is collected on our side, a request to exercise rights (access, rectification, erasure, portability) is unnecessary and cannot be fulfilled, as we hold no stored personal data. If you believe protected data nonetheless exists, submit a request via the contacts below; we will respond within the period required by applicable law, confirming that no such data is held. For data processed by the ad provider, contact Google.</p>
+<h2>17. Your rights</h2>
+<p>You can access your data in the App (your profile, scores, and block list are always visible to you), correct it (rename your nickname, edit your research profile), restrict it (decline or withdraw research and eye-tracking consent), and erase it (in-app account deletion, Section 6). For anything else, contact us at the address below; we respond within the period required by applicable law. For data processed by the ad provider, contact Google.</p>
 
-<h2>13. Changes to this policy</h2>
-<p>Any changes will be announced by publishing an updated version on this page with a new effective date. Material changes may be accompanied by an in-app notice where technically feasible.</p>
+<h2>18. Changes to this policy</h2>
+<p>Any changes will be announced by publishing an updated version on this page with a new date. Material changes may be accompanied by an in-app notice where technically feasible.</p>
 
-<h2>14. Contact</h2>
+<h2>19. Contact</h2>
 <p>Privacy questions: <a href="mailto:sansancur9984@gmail.com">sansancur9984@gmail.com</a>. We respond within a reasonable time.</p>
 </section>
 
