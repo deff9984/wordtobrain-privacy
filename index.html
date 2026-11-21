@@ -19,13 +19,13 @@
 
 <section id="en" lang="en">
 <h1>Privacy Policy — WordToBrain</h1>
-<p class="muted">Version 2.0 · Last updated: November 15, 2026</p>
+<p class="muted">Version 2.2 · Last updated: November 21, 2026</p>
 
 <h2>1. Data Controller and scope</h2>
 <p>This Policy describes how the <b>WordToBrain</b> application ("the App", "we") handles data. The data controller is the publisher of the App — an independent developer. This Policy applies to all users of the App, including the optional online Arena and research features.</p>
 
 <h2>2. In short</h2>
-<p>WordToBrain is a speed-reading app (RSVP). Reading works offline: your books, reading positions, and settings stay on your device. If you choose to join the <b>Arena</b> (daily challenge and leaderboards), we create a <b>nickname-only account</b> — no email, phone number, or password is requested — and store your nickname, scores, and reading volume so they can appear on public leaderboards. Two further features are strictly optional and consent-gated: a <b>research programme</b> (anonymous bins and reading statistics) and <b>eye-tracking research</b> (processed on your device; only numeric aggregates are uploaded). The mobile versions may display Google AdMob advertising (Section 11); "WordToBrain Pro" subscribers see no ads.</p>
+<p>WordToBrain is a speed-reading app (RSVP). Reading works offline: your books, reading positions, and settings stay on your device. If you choose to join the <b>Arena</b> (daily challenge and leaderboards), we create a <b>nickname-only account</b> — no email, phone number, or password is requested — and store your nickname, scores, and reading volume so they can appear on public leaderboards. Two further features are strictly optional and consent-gated: a <b>research programme</b> (anonymous bins and reading statistics) and <b>eye-tracking research</b> (processed on your device; only numeric aggregates are uploaded). Books you import stay on your device; if a book cannot be parsed locally, the App may offer an <b>optional server-side conversion</b> — the uploaded file and the converted text are deleted automatically 60 minutes after the conversion finishes (Section 8). The mobile versions may display Google AdMob advertising (Section 11); "WordToBrain Pro" subscribers see no ads. Premium is also sold as single-use promo codes through our Telegram bot, paid in Telegram Stars (Sections 13–15).</p>
 
 <h2>3. Arena accounts (nickname only)</h2>
 <p>To participate in the Arena the App registers an account with the nickname you pick. We store:</p>
@@ -50,8 +50,9 @@
 <p><b>No library synchronization.</b> WordToBrain does not sync your book library between devices: each device keeps its own library.</p>
 <p><b>Backups.</b> Your device's standard backup features (for example, iOS system backups) may include App data stored on the device. Such copying is performed by the operating system at your discretion and is not data processing by the App. We have no access to these backups.</p>
 
-<h2>8. File import</h2>
-<p>Book import (TXT, FB2, EPUB, PDF, DOC, DOCX) is performed only by you, following your explicit action (file selection or text paste), and is processed locally on your device for reading. Files are not transmitted to us or to third parties.</p>
+<h2>8. File import and optional server conversion</h2>
+<p>Book import (TXT, FB2, EPUB, PDF, DOC, DOCX) is performed only by you, following your explicit action (file selection or text paste). By default it is processed <b>locally on your device</b>, and the file is never transmitted to us or to third parties.</p>
+<p>If a book cannot be parsed on your device, the App may offer an <b>optional server-side conversion</b>, performed only after you explicitly accept. In that case you send us: the <b>book file itself</b>, its <b>filename</b>, and your <b>IP address</b> (or your Arena account token, if you are signed in) to enforce the free quota. We convert the file to plain reading text and return it to the App. The uploaded source, the converted text, and the job record are <b>deleted automatically 60 minutes after the conversion finishes</b>; nothing is copied elsewhere, nothing is shared with third parties, and conversion is never used to read, index, or profile your library. The free quota is 3 conversions per calendar month per user (or per IP address without an account); only the monthly counter itself is kept, until the end of that month, and it is not linked to your books or reading.</p>
 
 <h2>9. Research programme (optional)</h2>
 <p>The App offers an optional, consent-gated research programme (reading-speed science). Participation requires an Arena account and your explicit consent, and nothing is recorded before you consent. If you participate, we store:</p>
@@ -87,27 +88,157 @@
   <li>The store passes to the App only the purchase status (whether the subscription is active) needed to disable ads; this information is used on your device only.</li>
   <li>Subscription management and cancellation are performed in your account settings in the relevant store. Terms are set out in the <a href="https://deff9984.github.io/wordtobrain-terms/">Terms of Use</a>.</li>
 </ul>
+<p>An alternative purchase channel — single-use promo codes bought in Telegram Stars — is described in Section 13.</p>
 
-<h2>13. Disclosure to third parties, sale, and transfer</h2>
-<p>We do not sell, rent, or disclose your personal data to third parties. Your Arena and research data is stored on our server and processed only as described in this Policy. The exceptions are data processed by the advertising and payment providers (Sections 11 and 12) under their own policies. We do not use your data for advertising, and we do not share it for tracking across other companies' apps or websites.</p>
+<h2>13. Promo codes (Telegram Stars purchases)</h2>
+<p>Premium is additionally sold as <b>single-use promo codes</b> through our official Telegram bot. A purchase is made in a private chat with the bot and is paid in Telegram Stars. The payment itself is processed by Telegram; the App and the publisher never receive or store your payment data. When you buy a code, we store only:</p>
+<ul>
+  <li>a <b>hashed promo code</b> (SHA-256) and a <b>masked code</b> (for example, WTB-&#42;&#42;&#42;&#42;-&#42;&#42;&#42;&#42;-XXXX) — the plaintext code is shown to you once in the chat and is never stored;</li>
+  <li>the buyer's <b>Telegram username or ID</b>, kept as a purchase note so the purchase can be traced and support can assist you;</li>
+  <li>a <b>SHA-256 hash of your device ID</b> — used to bind the code to a single device and enforce single-use; the raw device ID is never stored;</li>
+  <li>timestamps (generation and redemption) and an internal <b>audit event log</b> of the code's lifecycle.</li>
+</ul>
+<p>Codes are <b>single-use</b>: a code binds to exactly one device and cannot be redeemed again after use.</p>
 
-<h2>14. Retention</h2>
-<p>Arena, report, block, research, and gaze data is kept while your account exists and is erased in full when you delete your account (Section 6). Abuse-prevention counters (for example, rate limits keyed by IP address) are kept only for short security windows and are not linked to your nickname. Local device data (Section 7) is kept until you delete the App or clear its storage.</p>
+<h2>14. Promo code redemption and verification</h2>
+<p>When you redeem or verify a promo code in the App, we process: the <b>SHA-256 hash of your device ID</b>, the <b>code</b> itself (on redemption) or the <b>entitlement token</b> issued earlier (on verification), and the requester's <b>IP address</b> for rate limiting only. Rate-limiting counters are kept for short security windows, are not linked to your nickname or account, and are then discarded. Neither the raw device ID nor the plaintext code is stored after redemption (Section 13).</p>
 
-<h2>15. Security</h2>
+<h2>15. Telegram bot and channel communications</h2>
+<p>Messages you send to the bot (commands such as /start or /buy, and the payment confirmations Telegram forwards to it) are processed only to answer you and deliver your purchase. We do not use them for advertising and do not share them for tracking — there is no ad tracking in the bot or the channel. The optional Telegram channel is one-way announcements only; subscribing is voluntary and exposes nothing about you to us beyond what Telegram itself shows.</p>
+
+<h2>16. Disclosure to third parties, sale, and transfer</h2>
+<p>We do not sell, rent, or disclose your personal data to third parties. Your Arena and research data is stored on our server and processed only as described in this Policy. The exceptions are data processed by the advertising and payment providers (Sections 11, 12 and 13) under their own policies. We do not use your data for advertising, and we do not share it for tracking across other companies' apps or websites.</p>
+
+<h2>17. Retention</h2>
+<p>Arena, report, block, research, and gaze data is kept while your account exists and is erased in full when you delete your account (Section 6). Abuse-prevention counters (for example, rate limits keyed by IP address) are kept only for short security windows and are not linked to your nickname. Server-conversion uploads and converted texts (Section 8) are deleted automatically <b>60 minutes after the conversion finishes</b>; only the monthly quota counter survives, until the end of that month. Local device data (Section 7) is kept until you delete the App or clear its storage. Promo-code data (hashed codes, masked codes, purchase notes, device-ID hashes and the audit log) is kept while the code exists and for accounting and support records.</p>
+
+<h2>18. Security</h2>
 <p>Data is transmitted over encrypted HTTPS connections, and arena requests are authenticated with the per-account token described in Section 3. Local data is protected by the isolation provided by the operating system.</p>
 
-<h2>16. Children</h2>
+<h2>19. Children</h2>
 <p>The App is not directed at children. Readers who declare an age under 18 (and those under 13 in particular) are <b>excluded from the Arena, the research programme, and eye tracking</b> outright: they cannot create a competing presence or consent to research. If you believe a child has created an account, contact us and we will delete it.</p>
 
-<h2>17. Your rights</h2>
+<h2>20. Your rights</h2>
 <p>You can access your data in the App (your profile, scores, and block list are always visible to you), correct it (rename your nickname, edit your research profile), restrict it (decline or withdraw research and eye-tracking consent), and erase it (in-app account deletion, Section 6). For anything else, contact us at the address below; we respond within the period required by applicable law. For data processed by the ad provider, contact Google.</p>
 
-<h2>18. Changes to this policy</h2>
+<h2>21. Changes to this policy</h2>
 <p>Any changes will be announced by publishing an updated version on this page with a new date. Material changes may be accompanied by an in-app notice where technically feasible.</p>
 
-<h2>19. Contact</h2>
-<p>Privacy questions: <a href="mailto:sansancur9984@gmail.com">sansancur9984@gmail.com</a>. We respond within a reasonable time.</p>
+<h2>22. Contact</h2>
+<p>Privacy questions: <a href="mailto:sansancur9984@gmail.com">sansancur9984@gmail.com</a>. You can also reach the developer on <a href="https://www.linkedin.com/in/david-spiridonov-md/">LinkedIn</a>. We respond within a reasonable time.</p>
+</section>
+
+<hr>
+
+<section id="ru" lang="ru">
+<h1>Политика конфиденциальности — WordToBrain</h1>
+<p class="muted">Версия 2.2 · Обновлено: 21 ноября 2026 г.</p>
+
+<h2>1. Контролёр данных и область применения</h2>
+<p>Настоящая Политика описывает, как приложение <b>WordToBrain</b> («Приложение», «мы») обрабатывает данные. Контролёром данных является издатель Приложения — независимый разработчик. Политика распространяется на всех пользователей Приложения, включая необязательные онлайн-функции Арены и исследовательской программы.</p>
+
+<h2>2. Коротко</h2>
+<p>WordToBrain — приложение для скорочтения (RSVP). Чтение работает офлайн: ваши книги, позиции чтения и настройки остаются на вашем устройстве. Если вы решите присоединиться к <b>Арене</b> (дневной челлендж и таблицы лидеров), мы создаём <b>аккаунт только с ником</b> — email, номер телефона или пароль не запрашиваются — и храним ваш ник, результаты и объём чтения, чтобы они могли отображаться в публичных таблицах лидеров. Две другие функции строго необязательны и требуют отдельного согласия: <b>исследовательская программа</b> (анонимные диапазоны и статистика чтения) и <b>айслекинг-исследование</b> (обрабатывается на вашем устройстве; загружаются только числовые агрегаты). Книги, которые вы импортируете, остаются на устройстве; если книгу не удаётся разобрать локально, Приложение может предложить <b>необязательную серверную конвертацию</b> — загруженный файл и конвертированный текст автоматически удаляются через 60 минут после завершения конвертации (Раздел 8). Мобильные версии могут показывать рекламу Google AdMob (Раздел 11); подписчики «WordToBrain Pro» рекламы не видят. Premium также продаётся в виде одноразовых промокодов через нашего Telegram-бота с оплатой в Telegram Stars (Разделы 13–15).</p>
+
+<h2>3. Аккаунты Арены (только ник)</h2>
+<p>Для участия в Арене Приложение регистрирует аккаунт с выбранным вами ником. Мы храним:</p>
+<ul>
+  <li>ваш <b>ник</b> (ваша публичная идентичность в таблицах лидеров);</li>
+  <li>случайный <b>токен доступа</b>, который Приложение хранит на вашем устройстве для аутентификации запросов, — это не пароль, он не содержит персональных данных и никогда не отображается;</li>
+  <li>ваши результаты Арены (Раздел 4).</li>
+</ul>
+<p><b>Email, номер телефона или пароль не запрашиваются и не хранятся.</b> Аккаунт существует только на нашем сервере и на вашем устройстве; сторонние логины и социальный граф отсутствуют. Ник можно изменить в любой момент в Приложении.</p>
+
+<h2>4. Таблицы лидеров и объём чтения</h2>
+<p>Когда вы проходите дневной челлендж или синхронизируете прогресс чтения, мы сохраняем результаты: балл, скорость чтения (слов в минуту), точность, затраченное время и объём чтения (слова и секунды). Эти результаты привязаны к вашему аккаунту и отображаются в <b>публичных таблицах лидеров рядом с вашим ником</b>, доступных другим пользователям. Чтение вне Арены остаётся на вашем устройстве и не загружается, пока вы сами не синхронизируете его для таблицы объёма.</p>
+
+<h2>5. Жалобы и модерация</h2>
+<p>Ники в таблицах лидеров выбираются пользователями, поэтому Приложение позволяет <b>жаловаться</b> на ник, который вы считаете оскорбительным. Жалоба хранит: ник, на который пожаловались, причину из фиксированного списка и необязательное пояснение до 200 символов. Жалобы видны <b>только администратору сайта</b> в приватной очереди модерации — никогда другим пользователям и никогда на публичных страницах. Вы также можете <b>заблокировать</b> ник: заблокированные строки просто исчезают из ваших собственных таблиц лидеров. Ваш список блокировок приватен для вашего аккаунта и никому больше не показывается.</p>
+
+<h2>6. Удаление аккаунта</h2>
+<p>Вы можете удалить аккаунт <b>внутри Приложения</b> (Настройки → Аккаунт → Удалить аккаунт) с двойным подтверждением. Удаление происходит немедленно и необратимо: сервер стирает аккаунт и всё, что к нему привязано, одной операцией — ник, токен, все записи в таблицах лидеров и объём чтения, жалобы и блокировки, в которых вы фигурируете, а также любые исследовательские и айслекинг-данные. Ваш ник и записи просто перестают отображаться в таблицах. Удалить можно только те данные, которые у нас есть; после удаления мы не храним ничего, связанного с вашим аккаунтом.</p>
+
+<h2>7. Данные, хранящиеся только на вашем устройстве</h2>
+<p>Локальное хранилище Приложения на вашем устройстве содержит: импортированные книги, позиции чтения, закладки, настройки и локальные результаты сессий. Эти данные не покидают устройство, пока вы явно не воспользуетесь функцией Арены или исследования, описанной выше, изолированы от других приложений операционной системой и удаляются при удалении Приложения или очистке его хранилища.</p>
+<p><b>Нет синхронизации библиотеки.</b> WordToBrain не синхронизирует вашу библиотеку между устройствами: каждое устройство хранит свою библиотеку.</p>
+<p><b>Резервные копии.</b> Стандартные механизмы резервного копирования устройства (например, системные копии iOS) могут включать данные Приложения, хранящиеся на устройстве. Такое копирование выполняется операционной системой по вашему усмотрению и не является обработкой данных Приложением. У нас нет доступа к этим копиям.</p>
+
+<h2>8. Импорт файлов и необязательная серверная конвертация</h2>
+<p>Импорт книг (TXT, FB2, EPUB, PDF, DOC, DOCX) выполняется только вами, по вашему явному действию (выбор файла или вставка текста). По умолчанию обработка происходит <b>локально на вашем устройстве</b>, и файл не передаётся нам или третьим лицам.</p>
+<p>Если книгу не удаётся разобрать на устройстве, Приложение может предложить <b>необязательную серверную конвертацию</b>, которая выполняется только после вашего явного согласия. В этом случае вы отправляете нам: <b>сам файл книги</b>, его <b>имя файла</b> и <b>IP-адрес</b> (или токен аккаунта Арены, если вы авторизованы) для контроля бесплатной квоты. Мы конвертируем файл в простой текст для чтения и возвращаем его в Приложение. Загруженный исходник, конвертированный текст и запись о задаче <b>удаляются автоматически через 60 минут после завершения конвертации</b>; ничего не копируется куда-либо ещё, ничего не передаётся третьим лицам, и конвертация никогда не используется для чтения, индексации или профилирования вашей библиотеки. Бесплатная квота — 3 конвертации в календарный месяц на пользователя (или на IP-адрес без аккаунта); до конца месяца сохраняется только сам счётчик месяца, и он не связывается с вашими книгами или чтением.</p>
+
+<h2>9. Исследовательская программа (необязательная)</h2>
+<p>Приложение предлагает необязательную исследовательскую программу с отдельным согласием (наука о скорости чтения). Участие требует аккаунта Арены и вашего явного согласия; до согласия ничего не записывается. Если вы участвуете, мы храним:</p>
+<ul>
+  <li><b>ответы профиля только диапазонами</b> («бинами»): возрастная группа, пол, образование, сколько книг вы читаете, родной язык и ваша цель — никогда точные значения, свободный текст не принимается;</li>
+  <li><b>поведенческие события</b> из фиксированного белого списка: открытие/закрытие приложения, сессии чтения (слова, секунды, средний WPM), паузы и возобновления, завершение онбординга и результаты Арены.</li>
+</ul>
+<p>Согласие можно отозвать на экране исследовательского профиля Приложения в любой момент; запись останавливается немедленно, а уже сохранённые данные стираются вместе с аккаунтом (Раздел 6).</p>
+
+<h2>10. Айслекинг-исследование (необязательное)</h2>
+<p>В рамках исследовательской программы вы можете отдельно согласиться на <b>айслекинг через камеру</b> (взгляд) во время дневного челленджа. Для него нужно отдельное согласие, и работает это так:</p>
+<ul>
+  <li>камера включается только в Приложении, только во время согласованной сессии и никогда не используется в фоне;</li>
+  <li>обработка взгляда происходит <b>на вашем устройстве</b> — <b>кадры камеры никогда его не покидают</b> и не загружаются;</li>
+  <li>по завершении сессии загружаются только числовые агрегаты: времена и количество фиксаций по словам, моргания, время вне экрана, усреднённые размеры зрачка, оценка калибровки, качество захвата и необязательная самооценка сложности;</li>
+  <li>айслекинг можно отключить в Настройках в любой момент, а все данные взгляда стираются вместе с аккаунтом (Раздел 6).</li>
+</ul>
+
+<h2>11. Реклама (мобильные версии)</h2>
+<p>Мобильные версии Приложения (iOS и Android) могут показывать полноэкранную рекламу через Google AdMob. Веб-версия рекламы не показывает. Подписчики «WordToBrain Pro» рекламы не видят.</p>
+<ul>
+  <li>Показ рекламы может включать обработку данных рекламным провайдером (например, рекламные идентификаторы, IP-адрес и данные о взаимодействии с рекламой) в соответствии с <a href="https://policies.google.com/privacy">Политикой конфиденциальности Google</a> и условиями AdMob.</li>
+  <li>На iOS показывается системный запрос App Tracking Transparency; можно отказаться, и реклама будет показываться без персонализации.</li>
+  <li>Где требуется по закону (например, в ЕЭЗ или Великобритании), Google применяет механизм согласия пользователя в соответствии с требованиями GDPR.</li>
+  <li>Мы не получаем от рекламного провайдера персональные данные, идентифицирующие вас, и не строим профиль на основе рекламных данных.</li>
+  <li>Отказ: подпишитесь на «WordToBrain Pro» или удалите Приложение.</li>
+</ul>
+
+<h2>12. Покупки в приложении (подписка)</h2>
+<p>Подписка «WordToBrain Pro» покупается и оплачивается через магазин, из которого установлено Приложение: Apple App Store (StoreKit) или Google Play (Play Billing).</p>
+<ul>
+  <li>Платёжные данные (например, номера карт) обрабатываются исключительно магазином; Приложение и издатель их не получают и не хранят.</li>
+  <li>Магазин передаёт Приложению только статус покупки (активна ли подписка), необходимый для отключения рекламы; эта информация используется только на вашем устройстве.</li>
+  <li>Управление подпиской и её отмена выполняются в настройках аккаунта соответствующего магазина. Условия изложены в <a href="https://deff9984.github.io/wordtobrain-terms/">Условиях использования</a>.</li>
+</ul>
+<p>Альтернативный канал покупки — одноразовые промокоды, оплачиваемые в Telegram Stars, — описан в Разделе 13.</p>
+
+<h2>13. Промокоды (покупки за Telegram Stars)</h2>
+<p>Premium дополнительно продаётся в виде <b>одноразовых промокодов</b> через нашего официального Telegram-бота. Покупка совершается в приватном чате с ботом и оплачивается в Telegram Stars. Сам платёж обрабатывает Telegram; Приложение и издатель никогда не получают и не хранят ваши платёжные данные. При покупке кода мы храним только:</p>
+<ul>
+  <li><b>хэш промокода</b> (SHA-256) и <b>маскированный код</b> (например, WTB-&#42;&#42;&#42;&#42;-&#42;&#42;&#42;&#42;-XXXX) — открытый код показывается вам один раз в чате и никогда не хранится;</li>
+  <li><b>имя пользователя или ID покупателя в Telegram</b> в качестве пометки о покупке, чтобы покупку можно было отследить, а поддержка могла вам помочь;</li>
+  <li><b>SHA-256-хэш идентификатора вашего устройства</b> — для привязки кода к одному устройству и соблюдения одноразовости; сам идентификатор устройства никогда не хранится;</li>
+  <li>отметки времени (генерация и погашение) и внутренний <b>журнал событий аудита</b> жизненного цикла кода.</li>
+</ul>
+<p>Коды <b>одноразовые</b>: код привязывается ровно к одному устройству и не может быть погашен повторно.</p>
+
+<h2>14. Погашение и проверка промокодов</h2>
+<p>Когда вы погашаете или проверяете промокод в Приложении, мы обрабатываем: <b>SHA-256-хэш идентификатора вашего устройства</b>, сам <b>код</b> (при погашении) или ранее выданный <b>токен доступа</b> (при проверке), а также <b>IP-адрес</b> запрашивающей стороны — только для ограничения частоты запросов. Счётчики ограничений частоты хранятся короткие защитные интервалы, не связываются с вашим ником или аккаунтом и затем удаляются. Ни сам идентификатор устройства, ни открытый код после погашения не хранятся (Раздел 13).</p>
+
+<h2>15. Коммуникации в Telegram-боте и канале</h2>
+<p>Сообщения, которые вы отправляете боту (команды вроде /start или /buy, а также подтверждения платежей, которые пересылает Telegram), обрабатываются только для ответа вам и доставки вашей покупки. Мы не используем их для рекламы и не передаём для отслеживания — в боте и канале нет рекламного трекинга. Необязательный Telegram-канал — только односторонние объявления; подписка добровольна и не раскрывает нам о вас ничего сверх того, что и так показывает Telegram.</p>
+
+<h2>16. Передача данных третьим лицам, продажа и трансфер</h2>
+<p>Мы не продаём, не сдаём в аренду и не раскрываем ваши персональные данные третьим лицам. Данные Арены и исследований хранятся на нашем сервере и обрабатываются только так, как описано в настоящей Политике. Исключения — данные, обрабатываемые рекламным и платёжными провайдерами (Разделы 11, 12 и 13) по их собственным политикам. Мы не используем ваши данные для рекламы и не передаём их для отслеживания в приложениях и на сайтах других компаний.</p>
+
+<h2>17. Сроки хранения</h2>
+<p>Данные Арены, жалоб, блокировок, исследований и взгляда хранятся, пока существует ваш аккаунт, и полностью стираются при его удалении (Раздел 6). Счётчики защиты от злоупотреблений (например, лимиты по IP-адресу) хранятся только короткие защитные интервалы и не связываются с вашим ником. Загруженные на конвертацию файлы и конвертированные тексты (Раздел 8) удаляются автоматически <b>через 60 минут после завершения конвертации</b>; до конца месяца сохраняется только счётчик месячной квоты. Локальные данные устройства (Раздел 7) хранятся до удаления Приложения или очистки его хранилища. Данные промокодов (хэши кодов, маскированные коды, пометки о покупках, хэши идентификаторов устройств и журнал аудита) хранятся, пока существует код, а также для учёта и поддержки.</p>
+
+<h2>18. Безопасность</h2>
+<p>Данные передаются по зашифрованным HTTPS-соединениям, а запросы Арены аутентифицируются персональным токеном аккаунта, описанным в Разделе 3. Локальные данные защищены изоляцией, предоставляемой операционной системой.</p>
+
+<h2>19. Дети</h2>
+<p>Приложение не ориентировано на детей. Читатели, указавшие возраст до 18 лет (и особенно до 13), <b>исключаются из Арены, исследовательской программы и айслекинга</b> полностью: они не могут создать конкурсную учётную запись или согласиться на исследование. Если вы считаете, что ребёнок создал аккаунт, свяжитесь с нами, и мы удалим его.</p>
+
+<h2>20. Ваши права</h2>
+<p>Вы можете получать доступ к своим данным в Приложении (профиль, результаты и список блокировок всегда видны вам), исправлять их (сменить ник, изменить исследовательский профиль), ограничивать их (отозвать согласие на исследование и айслекинг) и удалять их (удаление аккаунта в приложении, Раздел 6). По остальным вопросам свяжитесь с нами по адресу ниже; мы отвечаем в срок, требуемый применимым законодательством. По данным, обрабатываемым рекламным провайдером, обращайтесь в Google.</p>
+
+<h2>21. Изменения этой политики</h2>
+<p>Все изменения будут анонсироваться публикацией обновлённой версии на этой странице с новой датой. Существенные изменения, где это технически возможно, могут сопровождаться уведомлением в приложении.</p>
+
+<h2>22. Контакты</h2>
+<p>Вопросы конфиденциальности: <a href="mailto:sansancur9984@gmail.com">sansancur9984@gmail.com</a>. Разработчика также можно найти в <a href="https://www.linkedin.com/in/david-spiridonov-md/">LinkedIn</a>. Мы отвечаем в разумный срок.</p>
 </section>
 
 </body>
